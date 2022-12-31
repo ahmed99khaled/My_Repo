@@ -21,16 +21,11 @@ class MyTheme{
     ),
     textTheme:TextTheme(
       headline1:TextStyle(
-        fontSize:22,
-        fontWeight:FontWeight.w500,
-        color:whiteColor
-      ),
-      headline2:TextStyle(
-        fontSize:24,
-        fontWeight:FontWeight.bold,
-        color:blackColor
-
-      ),
+          fontSize: 22, fontWeight: FontWeight.w500, color: whiteColor),
+      headline2: TextStyle(
+          fontSize: 24, fontWeight: FontWeight.bold, color: blackColor),
+      headline3: TextStyle(
+          fontSize: 17, fontWeight: FontWeight.bold, color: blackColor),
     ),
 
   );
