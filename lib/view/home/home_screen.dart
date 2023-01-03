@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:news_app/core/style/mytheme.dart';
 import 'package:news_app/view/settings_screen.dart';
 
+import '../category/category_news_list_widget.dart';
 import 'category_grad_view_widget.dart';
-import 'category_news_list_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'home screen';
@@ -15,39 +15,39 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   List<Category> categoryList = [
     Category(
-      categoryID: 'Sports',
+      categoryID: 'sports',
       categoryImage: 'assets/images/sports.png',
-      categoryTitle: 'sports',
+      categoryTitle: 'Sports',
       categoryBackground: MyTheme.redColor,
     ),
     Category(
-      categoryID: 'Generl',
+      categoryID: 'generl',
       categoryImage: 'assets/images/Politics.png',
-      categoryTitle: 'politics',
+      categoryTitle: 'Generl',
       categoryBackground: MyTheme.blueColor,
     ),
     Category(
-      categoryID: 'Health',
+      categoryID: 'health',
       categoryImage: 'assets/images/health.png',
-      categoryTitle: 'health',
+      categoryTitle: 'Health',
       categoryBackground: MyTheme.pinkColor,
     ),
     Category(
-      categoryID: 'Bussines',
+      categoryID: 'bussines',
       categoryImage: 'assets/images/bussines.png',
-      categoryTitle: 'bussines',
+      categoryTitle: 'Bussines',
       categoryBackground: MyTheme.brownColor,
     ),
     Category(
-      categoryID: 'Environment',
+      categoryID: 'technology',
       categoryImage: 'assets/images/environment.png',
-      categoryTitle: 'environment',
+      categoryTitle: 'Technology',
       categoryBackground: MyTheme.babyBlueColor,
     ),
     Category(
-      categoryID: 'Science',
+      categoryID: 'science',
       categoryImage: 'assets/images/science.png',
-      categoryTitle: 'science',
+      categoryTitle: 'Science',
       categoryBackground: MyTheme.yellowColor,
     ),
   ];

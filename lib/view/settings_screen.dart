@@ -9,7 +9,7 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  List<String> listItems = ['English', 'Arabic', '', ''];
+  List<String> listItems = ['English', 'Arabic', ''];
   String selectedValue = "English";
 
   @override
