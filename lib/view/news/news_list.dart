@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/core/api/api_manager.dart';
-import 'package:news_app/core/model/SourcesResponse.dart';
-import 'package:news_app/view/category/category_tabs_widget.dart';
-import 'package:news_app/view/home/category_grad_view_widget.dart';
+import 'package:news_app/core/model/Source.dart';
+import 'package:news_app/view/news/news_item.dart';
 
+import '../../core/api/api_manager.dart';
+import '../../core/model/NewsResponse.dart';
 
-class CategoryNewsList extends StatelessWidget {
-  Category category;
+class NewsList extends StatelessWidget {
+  Source source;
 
-  CategoryNewsList({required this.category});
+  NewsList(this.source);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: FutureBuilder<SourcesResponse>(
-        future: ApiManager.getSources(category.categoryID),
-        builder: (buildContext, snapshot) {
+      child: FutureBuilder<NewsResponse>(
+        future: ApiManager.getNews(sourceId: source.id ?? ''),
+        builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(
               child: CircularProgressIndicator(),
@@ -31,7 +31,11 @@ class CategoryNewsList extends StatelessWidget {
               child: Text('Server error ${snapshot.data?.message}'),
             );
           }
-          return CategoryTabsWidget(snapshot.data!.sources!);
+          var articalesList = snapshot.data?.articles;
+          return ListView.builder(
+            itemBuilder: (context, index) => NewsItem(articalesList![index]),
+            itemCount: snapshot.data?.articles?.length,
+          );
         },
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/core/style/mytheme.dart';
+import 'package:news_app/view/news/search_screen.dart';
 import 'package:news_app/view/settings_screen.dart';
 
 import '../category/category_news_list_widget.dart';
@@ -21,9 +22,9 @@ class _HomeScreenState extends State<HomeScreen> {
       categoryBackground: MyTheme.redColor,
     ),
     Category(
-      categoryID: 'generl',
+      categoryID: 'general',
       categoryImage: 'assets/images/Politics.png',
-      categoryTitle: 'Generl',
+      categoryTitle: 'General',
       categoryBackground: MyTheme.blueColor,
     ),
     Category(
@@ -33,9 +34,9 @@ class _HomeScreenState extends State<HomeScreen> {
       categoryBackground: MyTheme.pinkColor,
     ),
     Category(
-      categoryID: 'bussines',
+      categoryID: 'business',
       categoryImage: 'assets/images/bussines.png',
-      categoryTitle: 'Bussines',
+      categoryTitle: 'Business',
       categoryBackground: MyTheme.brownColor,
     ),
     Category(
@@ -77,6 +78,22 @@ class _HomeScreenState extends State<HomeScreen> {
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(30),
                     bottomRight: Radius.circular(30))),
+            actions: [
+              selectedItem == null
+                  ? const SizedBox()
+                  : InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, SearchScreen.routeName);
+                      },
+                      child: const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 12),
+                        child: Icon(
+                          Icons.search_outlined,
+                          size: 28,
+                        ),
+                      ),
+                    )
+            ],
           ),
           drawer: Drawer(
             child: Column(
