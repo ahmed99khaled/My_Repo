@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/core/style/mytheme.dart';
-import 'package:news_app/view/news/search_screen.dart';
+import 'package:news_app/view/search/search_screen.dart';
 import 'package:news_app/view/settings_screen.dart';
 
 import '../category/category_news_list_widget.dart';
